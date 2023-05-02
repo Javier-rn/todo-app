@@ -1,4 +1,16 @@
-function addFolderBtnEvent() {
+import Folder from './createFolder';
+import displayFolder from './displayFolder';
+
+function createFolderBtnEvent(btn) {
+  btn.addEventListener('click', function (e) {
+    const folderName = e.target.previousElementSibling.value;
+    const newFolder = new Folder(folderName);
+    e.target.parentNode.remove();
+    displayFolder(newFolder);
+  });
+}
+
+function addInputBtnEvent() {
   const addFolderBtn = document.querySelector('#add-folder-btn');
 
   addFolderBtn.addEventListener('click', function (e) {
@@ -14,6 +26,7 @@ function addFolderBtnEvent() {
 
       const addInputBtn = document.createElement('button');
       addInputBtn.textContent = '+';
+      createFolderBtnEvent(addInputBtn);
 
       li.append(addInputBtn);
       folders.append(li);
@@ -27,4 +40,4 @@ function removeEmptyInput(input) {
   }
 }
 
-export default addFolderBtnEvent;
+export default addInputBtnEvent;
