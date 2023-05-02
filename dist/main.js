@@ -1,0 +1,1 @@
+(()=>{"use strict";const o={title:"Do Yoga",description:"Do Yoga description",dueDate:"tomorrow",priority:"high"};console.log(o)})();
