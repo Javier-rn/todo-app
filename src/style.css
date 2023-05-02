@@ -85,6 +85,7 @@ nav ul li {
 }
 
 #folders li input {
+  width: 70%;
   background: none;
   border: none;
   outline: 1px solid #00426651;
