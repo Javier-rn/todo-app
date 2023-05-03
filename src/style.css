@@ -140,6 +140,21 @@ input[type='checkbox'] {
   border-bottom: 1px solid #00426618;
 }
 
+.inputs {
+  display: grid;
+  grid-template-columns: 0.3fr 0.3fr 1.5fr 4fr 1fr 0.7fr;
+  align-items: center;
+}
+
+.inputs input {
+  width: 90%;
+  background: none;
+  border: none;
+  outline: 1px solid #00426651;
+  border-radius: 3px;
+  position: relative;
+  bottom: 0.5em;
+}
 .hidden {
   visibility: hidden;
 }
