@@ -1,5 +1,6 @@
-import Folder from './createFolder';
+import Folder from './Folder';
 import displayFolder from './displayFolder';
+import createTodoInputs from './createInputs';
 
 function createFolderBtnEvent(btn) {
   btn.addEventListener('click', function (e) {
@@ -41,4 +42,11 @@ function addInputBtnEvent() {
   });
 }
 
-export default addInputBtnEvent;
+function revealTodoInputs() {
+  const revealInputsBtn = document.querySelector('.reveal-inputs-btn');
+  revealInputsBtn.addEventListener('click', function (e) {
+    e.target.parentNode.insertBefore(createTodoInputs(), revealInputsBtn);
+  });
+}
+
+export { addInputBtnEvent, revealTodoInputs };
