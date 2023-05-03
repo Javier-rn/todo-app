@@ -6,11 +6,8 @@ import Folder from './createFolder';
 import displayFolder from './displayFolder';
 import addInputBtnEvent from './eventHandlers';
 
-const newTodo = Todo('Do Yoga', 'Do Yoga description', 'tomorrow', 'high');
-
-console.log(newTodo);
-
 const newFolder = new Folder('Tomorrow');
+console.log(newFolder);
 displayFolder(newFolder);
 
 addInputBtnEvent();
