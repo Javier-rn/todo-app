@@ -121,9 +121,13 @@ nav ul li:active {
   flex-direction: column;
 }
 
-.todos-content button {
+.reveal-inputs-btn {
   margin-top: 1em;
   align-self: center;
+}
+
+.add-todo-btn {
+  transform: scale(1);
 }
 
 input[type='checkbox'] {
