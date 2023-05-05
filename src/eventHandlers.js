@@ -2,6 +2,9 @@ import Folder from './Folder';
 import Todo from './Todo';
 import displayFolder from './displayFolder';
 import displayTodoInputs from './displayTodoInputs';
+import addToAllFolders from './allFolders';
+
+import { v4 as uuidv4 } from 'uuid';
 
 function changeCurrentActiveFolder(folder) {
   const folders = document.querySelector('#folders').children;
@@ -27,7 +30,10 @@ function createFolderBtnEvent(btn) {
     } else {
       const newFolder = new Folder(folderName);
       e.target.parentNode.remove();
-      displayFolder(newFolder);
+
+      addToAllFolders(newFolder);
+
+      displayFolder(newFolder, newFolder.id);
     }
   });
 }
