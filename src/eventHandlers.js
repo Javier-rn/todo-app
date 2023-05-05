@@ -3,6 +3,22 @@ import Todo from './Todo';
 import displayFolder from './displayFolder';
 import displayTodoInputs from './displayTodoInputs';
 
+function changeCurrentActiveFolder(folder) {
+  const folders = document.querySelector('#folders').children;
+
+  for (let folder of folders) {
+    folder.className = '';
+  }
+
+  folder.className = 'active';
+}
+
+function addChangeFolderEvent(folder) {
+  folder.addEventListener('click', function (e) {
+    changeCurrentActiveFolder(folder);
+  });
+}
+
 function createFolderBtnEvent(btn) {
   btn.addEventListener('click', function (e) {
     const folderName = e.target.previousElementSibling.value;
@@ -60,8 +76,17 @@ function createTodoAddEvent(btn) {
 
     const newTodo = new Todo(title, description, dueDate, priority);
 
+    const currentFolder = document
+      .querySelector('#folders')
+      .querySelector('.active');
+    console.log(currentFolder);
     console.log(newTodo);
   });
 }
 
-export { addInputBtnEvent, revealTodoInputs, createTodoAddEvent };
+export {
+  addInputBtnEvent,
+  revealTodoInputs,
+  createTodoAddEvent,
+  addChangeFolderEvent,
+};
