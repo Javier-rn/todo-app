@@ -1,6 +1,7 @@
 import Folder from './Folder';
+import Todo from './Todo';
 import displayFolder from './displayFolder';
-import createTodoInputs from './createInputs';
+import displayTodoInputs from './displayTodoInputs';
 
 function createFolderBtnEvent(btn) {
   btn.addEventListener('click', function (e) {
@@ -45,8 +46,22 @@ function addInputBtnEvent() {
 function revealTodoInputs() {
   const revealInputsBtn = document.querySelector('.reveal-inputs-btn');
   revealInputsBtn.addEventListener('click', function (e) {
-    e.target.parentNode.insertBefore(createTodoInputs(), revealInputsBtn);
+    e.target.parentNode.insertBefore(displayTodoInputs(), revealInputsBtn);
   });
 }
 
-export { addInputBtnEvent, revealTodoInputs };
+function createTodoAddEvent(btn) {
+  btn.addEventListener('click', function (e) {
+    const inputs = e.target.parentNode.getElementsByTagName('input');
+    const title = inputs[0].value;
+    const description = inputs[1].value;
+    const dueDate = inputs[2].value;
+    const priority = inputs[3].value;
+
+    const newTodo = new Todo(title, description, dueDate, priority);
+
+    console.log(newTodo);
+  });
+}
+
+export { addInputBtnEvent, revealTodoInputs, createTodoAddEvent };

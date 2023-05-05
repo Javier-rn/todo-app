@@ -1,16 +1,17 @@
-function createTodoInputs() {
-  const currentDiv = document.querySelector('.inputs');
+import { createTodoAddEvent } from './eventHandlers';
 
+function displayTodoInputs() {
   const div = document.createElement('div');
-  const span1 = document.createElement('span');
-  const span2 = document.createElement('span');
+  const button = document.createElement('button');
+  const span = document.createElement('span');
   const textInput = document.createElement('input');
   const descInput = document.createElement('input');
   const dueDateInput = document.createElement('input');
   const priorityInput = document.createElement('input');
 
-  span1.classList.add('remove');
-  span1.textContent = 'x';
+  button.classList.add('add-todo-btn');
+  button.textContent = '+';
+  createTodoAddEvent(button);
   textInput.setAttribute('type', 'text');
   textInput.setAttribute('placeholder', 'Title');
   descInput.setAttribute('type', 'text');
@@ -20,8 +21,8 @@ function createTodoInputs() {
   priorityInput.setAttribute('type', 'text');
   priorityInput.setAttribute('placeholder', 'Priority');
 
-  div.append(span1);
-  div.append(span2);
+  div.append(button);
+  div.append(span);
   div.append(textInput);
   div.append(descInput);
   div.append(dueDateInput);
@@ -31,4 +32,4 @@ function createTodoInputs() {
   return div;
 }
 
-export default createTodoInputs;
+export default displayTodoInputs;
