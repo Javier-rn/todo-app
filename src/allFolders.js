@@ -5,4 +5,4 @@ function addToAllFolders(folder) {
   console.log(allFolders);
 }
 
-export default addToAllFolders;
+export { addToAllFolders, allFolders };

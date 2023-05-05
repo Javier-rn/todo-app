@@ -2,9 +2,7 @@ import Folder from './Folder';
 import Todo from './Todo';
 import displayFolder from './displayFolder';
 import displayTodoInputs from './displayTodoInputs';
-import addToAllFolders from './allFolders';
-
-import { v4 as uuidv4 } from 'uuid';
+import { addToAllFolders, allFolders } from './allFolders';
 
 function changeCurrentActiveFolder(folder) {
   const folders = document.querySelector('#folders').children;
@@ -85,8 +83,15 @@ function createTodoAddEvent(btn) {
     const currentFolder = document
       .querySelector('#folders')
       .querySelector('.active');
-    console.log(currentFolder);
-    console.log(newTodo);
+
+    console.log(allFolders);
+    console.log(currentFolder.id);
+
+    // const folderObj = allFolders.filter((folder) => {
+    //   return folder.id == currentFolder.id;
+    // });
+
+    // folderObj.addTodo(newTodo);
   });
 }
 
@@ -95,4 +100,5 @@ export {
   revealTodoInputs,
   createTodoAddEvent,
   addChangeFolderEvent,
+  changeCurrentActiveFolder,
 };
