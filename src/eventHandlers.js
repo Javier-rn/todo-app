@@ -66,7 +66,13 @@ function addInputBtnEvent() {
 function revealTodoInputs() {
   const revealInputsBtn = document.querySelector('.reveal-inputs-btn');
   revealInputsBtn.addEventListener('click', function (e) {
-    e.target.parentNode.insertBefore(displayTodoInputs(), revealInputsBtn);
+    const rows = e.target.parentNode.getElementsByClassName('row');
+    const lastRow = rows[rows.length - 1];
+    if ([...lastRow.classList].includes('inputs')) {
+      return;
+    } else {
+      e.target.parentNode.insertBefore(displayTodoInputs(), revealInputsBtn);
+    }
   });
 }
 
@@ -83,9 +89,6 @@ function createTodoAddEvent(btn) {
     const currentFolder = document
       .querySelector('#folders')
       .querySelector('.active');
-
-    console.log(allFolders);
-    console.log(currentFolder.id);
 
     // const folderObj = allFolders.filter((folder) => {
     //   return folder.id == currentFolder.id;
