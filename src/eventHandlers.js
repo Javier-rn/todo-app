@@ -3,6 +3,7 @@ import Todo from './Todo';
 import displayFolder from './displayFolder';
 import displayTodoInputs from './displayTodoInputs';
 import { addToAllFolders, allFolders } from './allFolders';
+import displayTodos from './displayTodos';
 
 function changeCurrentActiveFolder(folder) {
   const folders = document.querySelector('#folders').children;
@@ -32,6 +33,8 @@ function createFolderBtnEvent(btn) {
       addToAllFolders(newFolder);
 
       displayFolder(newFolder, newFolder.id);
+
+      displayTodos(newFolder);
     }
   });
 }
@@ -93,7 +96,7 @@ function createTodoAddEvent(btn) {
     })[0];
 
     folder.addTodo(newTodo);
-    console.log(folder);
+    displayTodos(folder);
   });
 }
 
