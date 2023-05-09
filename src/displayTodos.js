@@ -42,7 +42,11 @@ function displayTodos(folder) {
     div.classList.add('row');
 
     const span = document.createElement('span');
-    span.classList.add('remove');
+    span.textContent = 'x';
+    span.classList.add('remove', 'hidden');
+    span.addEventListener('click', function (e) {
+      e.target.parentNode.remove();
+    });
 
     const input = document.createElement('input');
     input.setAttribute('type', 'checkbox');
@@ -63,6 +67,13 @@ function displayTodos(folder) {
     div.append(p2);
     div.append(p3);
     div.append(p4);
+
+    div.addEventListener('mouseenter', function () {
+      span.classList.remove('hidden');
+    });
+    div.addEventListener('mouseleave', function () {
+      span.classList.add('hidden');
+    });
 
     todosContent.prepend(div);
   });
