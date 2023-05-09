@@ -86,15 +86,14 @@ function createTodoAddEvent(btn) {
 
     const newTodo = new Todo(title, description, dueDate, priority);
 
-    const currentFolder = document
-      .querySelector('#folders')
-      .querySelector('.active');
+    const id = document.querySelector('#folders').querySelector('.active').id;
 
-    // const folderObj = allFolders.filter((folder) => {
-    //   return folder.id == currentFolder.id;
-    // });
+    const folder = allFolders.filter((folder) => {
+      return folder.id === id;
+    })[0];
 
-    // folderObj.addTodo(newTodo);
+    folder.addTodo(newTodo);
+    console.log(folder);
   });
 }
 
