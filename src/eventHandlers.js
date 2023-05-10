@@ -47,6 +47,28 @@ function createFolderBtnEvent(btn) {
   });
 }
 
+function createFolderInputEvent(input) {
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      const folderName = e.target.value;
+      if (!folderName) {
+        return;
+      } else {
+        const newFolder = new Folder(folderName);
+        e.target.parentNode.remove();
+
+        addToAllFolders(newFolder);
+
+        displayFolder(newFolder, newFolder.id);
+
+        displayTodos(newFolder);
+      }
+    } else {
+      return;
+    }
+  });
+}
+
 function addInputBtnEvent() {
   const addFolderBtn = document.querySelector('#add-folder-btn');
 
@@ -59,6 +81,7 @@ function addInputBtnEvent() {
       // Create input element
       const input = document.createElement('input');
       input.setAttribute('type', 'text');
+      createFolderInputEvent(input);
 
       // Create button element
       const addInputBtn = document.createElement('button');
@@ -70,6 +93,7 @@ function addInputBtnEvent() {
       li.append(input);
       li.append(addInputBtn);
       folders.append(li);
+      input.focus();
     }
   });
 }
