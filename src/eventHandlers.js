@@ -93,10 +93,11 @@ function revealTodoInputs() {
 function createTodoAddEvent(btn) {
   btn.addEventListener('click', function (e) {
     const inputs = e.target.parentNode.getElementsByTagName('input');
+    const select = e.target.parentNode.getElementsByTagName('select')[0];
     const title = inputs[0].value;
     const description = inputs[1].value;
     const dueDate = inputs[2].value;
-    const priority = inputs[3].value;
+    const priority = select.value;
 
     const newTodo = new Todo(title, description, dueDate, priority);
 

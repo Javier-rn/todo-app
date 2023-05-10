@@ -56,6 +56,11 @@ button {
   cursor: pointer;
   outline: inherit;
   margin-right: 10px;
+  transition: all 0.3s;
+}
+
+button:hover {
+  filter: brightness(75%);
 }
 
 nav p {
@@ -167,3 +172,12 @@ input[type='checkbox'] {
   cursor: pointer;
   width: 1em;
 }
+
+/* <div class="row">
+      <span class="remove">x</span>
+      <input type="checkbox" name="" id="" />
+      <p>Title</p>
+      <p>Description</p>
+      <p>Due</p>
+      <p>Priority</p>
+   </div>  */
