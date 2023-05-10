@@ -13,6 +13,14 @@ function changeCurrentActiveFolder(folder) {
   }
 
   folder.className = 'active';
+
+  const id = document.querySelector('#folders').querySelector('.active').id;
+
+  const currentFolder = allFolders.filter((folder) => {
+    return folder.id === id;
+  })[0];
+
+  displayTodos(currentFolder);
 }
 
 function addChangeFolderEvent(folder) {

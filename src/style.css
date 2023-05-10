@@ -162,3 +162,8 @@ input[type='checkbox'] {
 .hidden {
   visibility: hidden;
 }
+
+.remove {
+  cursor: pointer;
+  width: 1em;
+}
