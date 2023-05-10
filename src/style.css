@@ -141,6 +141,10 @@ input[type='checkbox'] {
   height: 16px;
 }
 
+input[type='date'] {
+  color: grey;
+}
+
 .row {
   margin: 10px 0;
   display: grid;
@@ -169,6 +173,12 @@ input[type='checkbox'] {
   width: 1em;
 }
 
+select {
+  box-sizing: border-box;
+  background: none;
+  padding: 0.1em 0.3em;
+  border-radius: 5px;
+}
 /* <div class="row">
       <span class="remove">x</span>
       <input type="checkbox" name="" id="" />
