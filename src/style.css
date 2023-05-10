@@ -142,27 +142,23 @@ input[type='checkbox'] {
 }
 
 .row {
-  padding: 2px 0;
   margin: 10px 0;
   display: grid;
-  grid-template-columns: 0.3fr 0.3fr 1.5fr 4fr 1fr 0.7fr;
+  grid-template-columns: 0.3fr 0.3fr 1.5fr 3.5fr 1fr 0.7fr;
   border-bottom: 1px solid #00426618;
+  gap: 30px;
 }
 
 .inputs {
   display: grid;
   grid-template-columns: 0.3fr 0.3fr 1.5fr 4fr 1fr 0.7fr;
-  align-items: center;
 }
 
 .inputs input {
-  width: 90%;
   background: none;
   border: none;
-  outline: 1px solid #00426651;
-  border-radius: 3px;
-  position: relative;
-  bottom: 0.5em;
+  border-bottom: 1px solid #00426696;
+  outline: none;
 }
 .hidden {
   visibility: hidden;
