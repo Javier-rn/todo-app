@@ -103,7 +103,6 @@ function revealTodoInputs() {
   revealInputsBtn.addEventListener('click', function (e) {
     const rows = e.target.parentNode.getElementsByClassName('row');
     const lastRow = rows[rows.length - 1];
-    console.log(lastRow);
     if (lastRow === undefined) {
       e.target.parentNode.insertBefore(displayTodoInputs(), revealInputsBtn);
     } else if ([...lastRow.classList].includes('inputs')) {
