@@ -10,9 +10,11 @@ body {
 .main-content {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  min-height: 100vh;
 }
 
 header {
+  width: 100%;
   background-color: #f98f13;
   font-weight: bold;
   height: 13vh;
@@ -30,7 +32,7 @@ header h1 {
 
 nav {
   background-color: #eae2b7;
-  height: 100vh;
+  min-height: 100vh;
   border-right: 2px solid #004266;
 }
 nav .nav-header {
@@ -116,7 +118,7 @@ nav ul li:active {
 
 .todos {
   background-color: #eae2b7;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .todos-content {
@@ -132,7 +134,7 @@ nav ul li:active {
 }
 
 .add-todo-btn {
-  transform: scale(1);
+  transform: scale(1.1);
 }
 
 input[type='checkbox'] {
@@ -179,11 +181,33 @@ select {
   padding: 0.1em 0.3em;
   border-radius: 5px;
 }
-/* <div class="row">
-      <span class="remove">x</span>
-      <input type="checkbox" name="" id="" />
-      <p>Title</p>
-      <p>Description</p>
-      <p>Due</p>
-      <p>Priority</p>
-   </div>  */
+
+@media (max-width: 680px) {
+  body {
+    background-color: grey;
+  }
+  .inputs {
+    grid-template-columns: none;
+    grid-template-rows: 0.3fr 0fr 1fr 1fr 1fr 1fr;
+  }
+
+  .row {
+    grid-template-columns: none;
+    grid-template-rows: 0.3fr 0.3fr 0.7fr 0.7fr 0.7fr 0.7fr;
+    border-bottom: 1px solid grey;
+  }
+
+  .row span {
+    display: none;
+  }
+
+  .add-todo-btn {
+    margin: auto;
+  }
+
+  #add-folder-btn {
+    transform: scale(1.4);
+    position: relative;
+    left: 0.4em;
+  }
+}
