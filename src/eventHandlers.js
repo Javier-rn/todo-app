@@ -123,6 +123,10 @@ function createTodoAddEvent(btn) {
     const dueDate = inputs[2].value;
     const priority = select.value;
 
+    if (title === '') {
+      return inputs[0].setAttribute('placeholder', '(!) Title required');
+    }
+
     const newTodo = new Todo(title, description, dueDate, priority);
 
     const id = document.querySelector('#folders').querySelector('.active').id;
